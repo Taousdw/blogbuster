@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    display: flex;
+    min-height: 600px;
+    
+}
+
+.form-container {
+    background-color:#717886 ;
+    min-height: 300px;
+    margin: auto auto;
+    border-radius: 8px;
+    min-width: 300px;
+    padding: 15px;
+}
+
+.first-view {
+    display: block;
+}
+
+/* ---------onglet connexion et inscription -------*/
+
+.onglets {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 16px 0px;
+    cursor: pointer;
+}
+
+
+
+.mail-password-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: auto;
+}
+
+.mail-password-container input {
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: #717886;
+    padding: 3px 3px;
+}
+.mail-password-container input:focus[type="email"],input[type="password"] {
+    
+  outline-color: #ffddc8;
+    
+}
+.mail-password-container input[type="submit"] {
+    background-color:#ffddc8 ;
+    cursor: pointer;
+    
+}
+
+
+.mail-password-container input[type="submit"]:hover{
+    background-color: white;
+    border:2px solid #ffddc8;
+}
+
+
+/* -------se souvenir de moi et mdp oublié ------*/
+
+.content-remember-password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+    font-size: 15px;
+    accent-color:#ffddc8 ;
+    
+}
+.content-remember-password label,a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+/* ----------choix role utilisateur ----------------*/
+
+.user-role {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    color: white;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.user-role label:first-child {
+    border-right: 2px solid #ffddc8;
+    padding-right: 5px;
+}
+
+.user-role input[type="radio"] {
+    margin:0;
+    accent-color: #ffddc8;
+    
+    
+}
+
+
+/*-------------------CONNEXION CONTAINER-------------------------*/
+
+.containerConnexion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: auto;
+    
+}
+
+.containerConnexion input {
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: #717886;
+    padding: 3px 3px;
+}
+.containerConnexion input[type="email"],input[type="password"] {
+    accent-color: #ffddc8;
+    
+}
+.containerConnexion input[type="submit"] {
+    background-color:#ffddc8 ;
+    
+}
+
+.mail-password-container {
+    width: 100%;
+}
+
+.mail-password-container input[type="submit"]:hover {
+    background-color: white;
+    border:2px solid #ffddc8;
+}
+
+
+/*-----------ajout de classe pour style dans le js----------------*/
+
+.hidden {
+    display: none !important;
+}
+
+/*---------------------------------------------------------------*/
+
+/*-------------message error email invalide*--------------*/
+
+.mail-password-container p {
+    color: rgb(244, 110, 110);
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+   
+  
+}

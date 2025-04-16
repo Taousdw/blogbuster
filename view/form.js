@@ -9,13 +9,17 @@ let passwordVerify = document.getElementById("passwordVerify");
 let email = document.getElementById("mail");
 let msgErrorEmail = document.querySelector(".msgErrorEmail");
 let msgErrorPassword = document.querySelector(".msgErrorPassword");
+let msgErrorInscription = document.querySelector(".msgErrorInscription");
 let msgErrorPasswordVerify = document.querySelector(".msgErrorPasswordVerify");
-
+let radioBlogueur = document.getElementById("blogueurRadio");
+let radioLecteur = document.getElementById("lecteurRadio");
 
 const reEmail = /^[\w.-]+@[\w.-]+\.\w{2,}$/;
 const reMdp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 const successColor = "rgb(62, 176, 5)";
 const errorColor = "rgb(244, 110, 110)";
+
+
 
 
 /*---------------------------------------FONCTIONS----------------------------------*/
@@ -27,6 +31,9 @@ function afficherConnexion() {
     });
 
    containerConnexion.classList.remove("hidden")
+
+    ongletConnexion.style.borderBottom="1px solid white";
+    ongletInscription.style.borderBottom="none";
   
    
 }
@@ -38,6 +45,8 @@ function afficherInscription() {
     containerInscription.forEach(divs => {
         divs.classList.remove("hidden");
     });
+    ongletConnexion.style.borderBottom="none";
+    ongletInscription.style.borderBottom="1px solid white";
 }
 
 
@@ -47,7 +56,7 @@ function checkEmail() {
     } else if (email.value.match(reEmail)) {
         successInput(email,msgErrorEmail,"")
     } else {
-       errorInput(email,msgErrorEmail,"Email invalide");
+       errorInput(email,msgErrorEmail,"Veuillez entrer une adresse email valide (ex : exemple@mail.com)");
     }
 }
 
@@ -58,7 +67,7 @@ function checkPassword() {
     } else if(password.value.match(reMdp)) {
         successInput(password,msgErrorPassword,"");
     } else {
-        errorInput(password,msgErrorPassword,"Mot de passe invalide");
+        errorInput(password,msgErrorPassword,"Votre mot de passe doit contenir au moins 8 caractères, dont une majuscule, une minuscule, un chiffre et un caractère spécial.");
 
     }
 }
@@ -114,4 +123,28 @@ function clearInput(inputStyle,sujet) {
 
 /* --------------------------------Password confimation valide----------------*/
     passwordVerify.addEventListener("input",checkPasswordVerify);
+/*----------------------------------------------------------------------------*/  
+
+/* --------------------------------after click s'inscrire----------------*/
+
+validationInscription.addEventListener("submit",() => {
+
+    if (password.value === "" || email.value === "" || passwordVerify.value ==="") {
+        msgErrorInscription.style.display = "block";
+        msgErrorInscription.textContent = "Veuillez remplir les champs vides";
+        /*validationInscription.setAttribute("disabled",true);*/
+    } else { 
+        msgErrorInscription.textContent = "";
+        msgErrorInscription.style.display = "none";
+        /*validationInscription.removeAttribute("disabled");*/
+       
+    }
+})
+
+
+
+/*--------------------STYLE---------------------*/
+
+
+
 /*----------------------------------------------------------------------------*/  

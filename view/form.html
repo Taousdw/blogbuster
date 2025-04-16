@@ -13,15 +13,23 @@
             <a id="btn-inscription">Inscription</a>
         </div>
         
-        <form action="">
+        <form action="#" method="POST">
+
             <div class="mail-password-container first-view">
-                <input type="email" name="mail" id="mail" placeholder="E-MAIL" required>
+                <input type="email" name="mail" id="mail" placeholder="E-MAIL">
                 <p class="msgErrorEmail" style="display:none"></p>
                 <input type="password" name="password" id="password" placeholder="MOT DE PASSE">
                 <p class="msgErrorPassword" style="display:none"></p>
                 <input type="password" name="passwordVerify" id="passwordVerify" placeholder="CONFIRMER MOT DE PASSE">
                 <p class="msgErrorPasswordVerify" style="display:none"></p>
-                <input type="submit" value="S'inscrire" id="validationInscription">  
+                <input type="submit" value="S'inscrire" id="validationInscription"> 
+                <p class="msgErrorInscription" style="display:none"></p> 
+            </div>
+
+            <div class="user-role first-view">
+                <label>Je suis</label>
+                <label for="lecteurRadio">Lecteur</label> <input type="radio" name="role" id="lecteurRadio" value="lecteur" required>
+                <label for="blogueurRadio">Blogueur</label><input type="radio" name="role" id="blogueurRadio" value="blogueur">
             </div>
             
             <div class="containerConnexion hidden">
@@ -29,19 +37,16 @@
                 <input type="password" name="passwordConnexion" id="passwordConnexion" placeholder="MOT DE PASSE">
                 
                 <input type="submit" value="Se connecter" id="connexion">  
-            </div>
+            </div> 
 
+            
             <div class="content-remember-password first-view">
                 <input type="checkbox" name="remember-me" id="remember-me">
                 <label for="remember-me">Se souvenir de moi</label>
                 <a href="">Mot de passe oublié ?</a>
             </div>
 
-            <div class="user-role first-view">
-                <label>Je suis </label>
-                <label for="lecteurRadio">Lecteur</label> <input type="radio" name="role" id="lecteurRadio" value="lecteur" required>
-                <label for="blogueurRadio">Blogueur</label><input type="radio" name="role" id="blogueurRadio" value="blogueur">
-            </div>
+           
         </form>
     </div>
     <script src="./form.js"></script>
