@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test implementation article</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label for="titre-article">Titre</label><br>
+        <input type="text" name="titre-article" id="titre-article"><br><br>
+        <label for="">Catégorie</label><br>
+        <label for="fitness">Fitness</label><input type="checkbox" name="categorie-article" value="Fitness"id="fitness">
+        <label for="travel">Travel</label><input type="checkbox" name="categorie-article" value="Travel" id="travel">
+        <label for="beauty">Beauty</label><input type="checkbox" name="categorie-article" value="Beauty" id="beauty"><br><br>
+
+        <label for="">Article</label><br>
+        <textarea name="body-article" id="body-article"></textarea><br><br>
+
+        <label for="image">Image</label>
+        <input type="file" id="image" name="image" accept="image/*"><br><br>
+      
+        <label for=""></label>Auteur<br>
+        <input type="text" name="auteur-article" id="auteur-article"><br><br>
+        <button type="submit">Publier</button>
+
+    </form>
+
+   <div id="formResult">
+
+   </div>
+
+  
+  <script src="./form-article.js"></script>
+  
+</body>
+</html>
+
+ 
+
