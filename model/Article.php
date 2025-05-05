@@ -1,5 +1,5 @@
 <?php
-require '../controllers/bddConnect.php';
+require_once('bddConnect.php');
 require 'Controllers/ArticleManager.php';
 
 
@@ -53,13 +53,13 @@ class Articles {
 
 
 
-$articleManager = new ArticleManager($pdo);
-$articlesList = $articleManager->getArticle();
+/*articleManager = new ArticleManager($pdo);
+$articlesList = $articleManager->getArticle(1);
 
 
 echo "<pre>";
 print_r($articlesList);
-echo "</pre>";
+echo "</pre>";*/
 
 
 

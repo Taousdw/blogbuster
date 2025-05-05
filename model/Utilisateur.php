@@ -12,6 +12,7 @@ class Utilisateur {
     private $nom_utilisateur;
     private $prenom_utilisateur;
     private $email_utilisateur;
+    private $password;
 
     // Constructeur permettant d'initialiser un objet Utilisateur avec ses attributs
     public function __construct($id_utilisateur,$role_utilisateur,$nom_utilisateur,$prenom_utilisateur,$email_utilisateur) {
@@ -20,6 +21,7 @@ class Utilisateur {
         $this->nom_utilisateur = $nom_utilisateur;
         $this->prenom_utilisateur = $prenom_utilisateur;
         $this->email_utilisateur = $email_utilisateur;
+        $this->password = $password;
     }
 
     // Méthode pour afficher les informations de l'utilisateur

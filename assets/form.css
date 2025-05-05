@@ -27,6 +27,13 @@ body {
     cursor: pointer;
 }
 
+.BlogueurUser input[type="text"]:focus {
+   
+outline-color:#ffddc8;
+    
+}
+
+
 
 
 .mail-password-container {
@@ -51,6 +58,7 @@ body {
 .mail-password-container input[type="submit"] {
     background-color:#ffddc8 ;
     cursor: pointer;
+    color: #717886;
     
 }
 
@@ -58,12 +66,14 @@ body {
 .mail-password-container input[type="submit"]:hover{
     background-color: white;
     border:2px solid #ffddc8;
+   
 }
 
 
 /* -------se souvenir de moi et mdp oublié ------*/
 
-.content-remember-password {
+.containerConnexion {
+   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,12 +83,20 @@ body {
     accent-color:#ffddc8 ;
     
 }
-.content-remember-password label,a {
+.containerConnexion label,a {
     color: white;
     text-decoration: none;
 }
 
-
+.containerConnexion input[type="email"],input[type="password"],input[type="submit"] {
+    
+    width: 100%;
+   
+}
+.containerConnexion input[type="email"] {
+    margin-top: 20px;
+   
+}
 
 
 /* ----------choix role utilisateur ----------------*/
@@ -121,24 +139,28 @@ body {
     border-radius: 5px;
     color: #717886;
     padding: 3px 3px;
+   
 }
-.containerConnexion input[type="email"],input[type="password"] {
-    accent-color: #ffddc8;
-    
-}
+
 .containerConnexion input[type="submit"] {
     background-color:#ffddc8 ;
+    cursor: pointer;
+    color: #717886;
     
+}
+
+
+.containerConnexion input[type="submit"]:hover{
+    background-color: white;
+    border:2px solid #ffddc8;
+   
 }
 
 .mail-password-container {
     width: 100%;
 }
 
-.mail-password-container input[type="submit"]:hover {
-    background-color: white;
-    border:2px solid #ffddc8;
-}
+
 
 
 /*-----------ajout de classe pour style dans le js----------------*/
@@ -151,11 +173,21 @@ body {
 
 /*-------------message error email invalide*--------------*/
 
-.mail-password-container p {
+
+
+#msgErrorNom,
+#msgErrorPrenom,
+#msgErrorPassword,
+#msgErrorPasswordVerify,
+#msgErrorEmail,
+#msgErrorEmailConnexion,
+#msgErrorPasswordConnexion {
+   
     color: rgb(244, 110, 110);
     font-size: 12px;
     margin: 0;
-    padding: 0;
-   
-  
+    padding-top: 2px;
+    text-align: center;
+
 }
+

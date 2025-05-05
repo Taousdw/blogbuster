@@ -10,6 +10,12 @@ class ArticleManager {
     }
 
     
+    public function getArticle($id_article) {
+        
+        $query = $this->pdo->prepare("SELECT * FROM articles WHERE id_article = ?");
+        $query->execute([$id_article]);
+        return $query->fetch(PDO::FETCH_ASSOC); 
+    }
 
     public function createArticle($titre_article,$contenu_article,$id_utilisateur,$id_categorie,$image) {
         $query = $this->pdo->prepare("INSERT INTO articles (titre_article,contenu_article,id_utilisateur,id_categorie,date_article,image) VALUES (?,?,?,?,?,NOW())");
