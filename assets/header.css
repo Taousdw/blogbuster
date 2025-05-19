@@ -1,10 +1,9 @@
-body{
-    margin: 0;
-    
-}
+
 .header{
+    flex-shrink: 0;
     width: 100%;
-    background-color:#586071 ;
+    min-height: 100px;
+    background-color:var(--primary-color);
     color:white;
     display: flex;
     align-items: center;

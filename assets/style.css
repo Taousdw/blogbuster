@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'titreBlogbuster';
+    src: url('./fonts/PlayfairDisplay-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'titre2Blogbuster';
+    src: url('./fonts/PlayfairDisplay-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'textBlogbuster';
+  src: url('./fonts/Roboto-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+    
+    --primary-color: #717886;
+    --secondary-color:  #c7e7de;
+    --button-color: #ffddc8;
+    --text-color: #586071;
+
+    --effect-bg-color: #ffffff; 
+    --effect-border-color: #ffddc8;
+
+    --font-title:'titreBlogbuster',serif;
+    --font-title2:'titre2Blogbuster',sans-serif;
+    --font-text:'textBlogbuster',sans-serif;
+
+}
+
+body {
+    background: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0; /* évite des espaces blancs involontaires */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background:#f0f0f0 ;
+    flex: 1; /* prend tout l’espace restant entre header et footer */
+    display: flex; /* pour centrer verticalement/horizontalement */
+    justify-content: center;
+    align-items: center;
+    
+}

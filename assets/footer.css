@@ -1,20 +1,19 @@
-body{
-    margin: 0;
-    display: flex;
-    
-}
 
 
 
-footer{
+
+
+
+.footer{
+    flex-shrink: 0;
     width: 100%;
-    height:200px;
-    background-color:#586071;
+    min-height: 140px;
+    background-color:var(--primary-color);
     
     
 }
 
-footer h3,p{
+.footer h3,p{
     text-align: center;
     color:white;
     padding: 20px 0px 0px 0px;
@@ -29,9 +28,9 @@ footer h3,p{
     align-items: center;
 }
 
- a{
-    background-color: #ffddc8;
-    color:#586071 ;
+ content-button a{
+    background-color: var(--button-color);
+    color:var(--text-color);
     border-radius: 5px;
     text-decoration: none;
     padding: 10px 10px;

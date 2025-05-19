@@ -7,29 +7,25 @@
 </head>
 
 <body>
-    <form action="" method="post">
+    <form action="../controllers/ajoutFormulaireArticle.php" method="post" enctype="multipart/form-data">
         <label for="titre-article">Titre</label><br>
         <input type="text" name="titre-article" id="titre-article"><br><br>
         <label for="">Catégorie</label><br>
-        <label for="fitness">Fitness</label><input type="checkbox" name="categorie-article" value="Fitness"id="fitness">
-        <label for="travel">Travel</label><input type="checkbox" name="categorie-article" value="Travel" id="travel">
-        <label for="beauty">Beauty</label><input type="checkbox" name="categorie-article" value="Beauty" id="beauty"><br><br>
+        <label for="fitness">Fitness</label><input type="radio" name="categorie-article" value="1" id="fitness" required>
+        <label for="travel">Travel</label><input type="radio" name="categorie-article" value="2" id="travel">
+        <label for="beauty">Beauty</label><input type="radio" name="categorie-article" value="3" id="beauty">
 
         <label for="">Article</label><br>
-        <textarea name="body-article" id="body-article"></textarea><br><br>
+        <textarea name="contenu_article" id="contenu_article"></textarea><br><br>
 
         <label for="image">Image</label>
         <input type="file" id="image" name="image" accept="image/*"><br><br>
       
-        <label for=""></label>Auteur<br>
-        <input type="text" name="auteur-article" id="auteur-article"><br><br>
         <button type="submit">Publier</button>
 
     </form>
 
-   <div id="formResult">
-
-   </div>
+  
 
   
   <script src="./form-article.js"></script>

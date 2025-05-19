@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Test Layout</title>
+<style>
+  /* RESET */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body, html {
+    height: 100%;
+  }
+
+  /* Layout général */
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+
+  header {
+    background-color: #717886;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    flex-shrink: 0; /* ne pas rétrécir */
+  }
+
+  main {
+    flex: 1; /* prend tout l’espace restant */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  footer {
+    background-color: #717886;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>BLOG-BUSTER</h1>
+    <nav>
+      <ul style="list-style:none; display:flex; justify-content:center; gap:30px;">
+        <li>Travel</li>
+        <li>Beauty</li>
+        <li>Fitness</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form>
+      <input type="email" placeholder="E-MAIL" style="width:100%; padding:10px; margin-bottom:15px;" />
+      <input type="password" placeholder="MOT DE PASSE" style="width:100%; padding:10px; margin-bottom:15px;" />
+      <input type="submit" value="Se connecter" style="width:100%; padding:10px; background:#ffddc8; border:none; cursor:pointer;" />
+    </form>
+  </main>
+
+  <footer>
+    <p>Vous êtes blogueur(se) ? Partagez votre passion !</p>
+  </footer>
+</body>
+</html>

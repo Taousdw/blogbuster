@@ -1,5 +1,5 @@
 
-let ongletInscription = document.getElementById("btn-inscription");
+
 let containerInscription = document.querySelectorAll(".first-view");
 let formInscription = document.getElementById("formInscription");
 let password = document.getElementById("password");
@@ -20,14 +20,15 @@ let errorDiv = document.getElementById("errorMessage");
 
 
 /*-------------------display connexion---------------------- */
-let formConnexion = document.getElementById("formConnexion");
+/*-let formConnexion = document.getElementById("formConnexion");
 let containerConnexion = document.querySelector(".containerConnexion");
-let ongletConnexion = document.getElementById("btn-connexion");
+
 let emailConnexion =  document.getElementById("mailConnexion");
 let passwordConnexion =  document.getElementById("passwordConnexion");
 let connexion =  document.getElementById("connexion");
 let msgErrorPasswordConnexion = document.getElementById("msgErrorPasswordConnexion");
-let msgErrorEmailConnexion = document.getElementById("msgErrorEmailConnexion");
+let msgErrorEmailConnexion = document.getElementById("msgErrorEmailConnexion");*/
+
 
 
 
@@ -46,37 +47,15 @@ const errorColor = "rgb(244, 110, 110)";
 
 
 
-ongletInscription.style.borderBottom="1px solid white";
+
 
 
 /*---------------------------------------FONCTIONS----------------------------------*/
 
 
 
-function afficherConnexion() { 
 
-    containerInscription.forEach(divs => {
-        divs.classList.add("hidden");
-    });
 
-   containerConnexion.classList.remove("hidden")
-
-    ongletConnexion.style.borderBottom="1px solid white";
-    ongletInscription.style.borderBottom="none";
-  
-   
-}
-
-function afficherInscription() {
-
-    containerConnexion.classList.add("hidden")
-    
-    containerInscription.forEach(divs => {
-        divs.classList.remove("hidden");
-    });
-    ongletConnexion.style.borderBottom="none";
-    ongletInscription.style.borderBottom="1px solid white";
-}
 
 
 function checkEmail() {
@@ -94,19 +73,7 @@ function checkEmail() {
     } 
 }
 
-function checkEmailConnexion() {
-    if (emailConnexion.value.trim() === "") {
-        errorInput(emailConnexion,msgErrorEmailConnexion,"Veuillez remplir les champs vides");
-       return false;
-    } else if (emailConnexion.value.match(reEmail)) {
-        successInput(emailConnexion,msgErrorEmailConnexion,"")
-        return true;
-    } else {
-       errorInput(emailConnexion,msgErrorEmailConnexion,"Veuillez entrer une adresse email valide (ex : exemple@mail.com)");
-       return false;
-       
-    }
-}
+
 
 function checkPassword() {
     if(password.value.trim() === "") {
@@ -127,25 +94,7 @@ function checkPassword() {
     }
 }
 
-function checkPasswordConnexion() {
-    if(passwordConnexion.value.trim() === "") {
-        
-        errorInput(passwordConnexion,msgErrorPasswordConnexion,"Veuillez remplir les champs vides");
-        return false;
-        
-       
-    } else if(passwordConnexion.value.match(reMdp)) {
-        clearInput(passwordConnexion,msgErrorPasswordConnexion);
-        successInput(passwordConnexion,msgErrorPasswordConnexion,"");
-        return true;
-       
-    } else {
-        errorInput(passwordConnexion,msgErrorPasswordConnexion,"Votre mot de passe doit contenir au moins 8 caractères, dont une majuscule, une minuscule, un chiffre et un caractère spécial.");
-        return false;
-       
 
-    }
-}
 
 function checkPasswordVerify() {
       if(passwordVerify.value.trim() === "") {
@@ -167,7 +116,7 @@ function checkPasswordVerify() {
 
 function successInput(inputStyle,sujet) {
     inputStyle.style.borderColor = successColor;
-    sujet.style.visibility = "hidden";
+    sujet.style.visibility ="hidden";
    
     
 
@@ -175,7 +124,7 @@ function successInput(inputStyle,sujet) {
  
 function errorInput(inputStyle,sujet,message) {
     inputStyle.style.borderColor = errorColor;
-    sujet.style.visibility = "visible";
+    sujet.style.visibility ="visible";
     sujet.textContent = message;
    
     
@@ -184,7 +133,7 @@ function errorInput(inputStyle,sujet,message) {
 
 function clearInput(inputStyle,sujet) {
     inputStyle.style.borderColor = "";
-    sujet.style.visibility= "hidden";
+    sujet.style.visibility="hidden";
     sujet.textContent = "";
    
     
@@ -237,17 +186,11 @@ function errorSurname() {
 }
 
 
-console.log(msgErrorPasswordConnexion);
 
 
 
-/*---------Apparition du container connexion en cliquant dessus --------------*/
-    ongletConnexion.addEventListener("click", afficherConnexion);
-/*----------------------------------------------------------------------------*/
 
-/* ------------Apparition du container inscription en cliquant dessus --------*/
-    ongletInscription.addEventListener("click", afficherInscription);
-/*----------------------------------------------------------------------------*/
+
 
 /* --------------------------------Je suis blogueur/je suis lecteur-------------------------------*/
     radioBlogueur.addEventListener("click",() => {
@@ -280,13 +223,9 @@ console.log(msgErrorPasswordConnexion);
     passwordVerify.addEventListener("input",checkPasswordVerify);
 /*----------------------------------------------------------------------------*/  
 
-/* --------------------------------Email valide connexion-------------------------------*/
-    emailConnexion.addEventListener("input", checkEmailConnexion);
-/*----------------------------------------------------------------------------*/ 
+
  
-/* --------------------------------Password valide connexion----------------------------*/
-    passwordConnexion.addEventListener("input",checkPasswordConnexion);
-/*----------------------------------------------------------------------------*/   
+
 
 
 
@@ -295,7 +234,7 @@ console.log(msgErrorPasswordConnexion);
 
 
 formInscription.addEventListener("submit", (event) => {
-    event.preventDefault(); 
+  
 
     const nameValid = errorName();
     const surnameValid = errorSurname();
@@ -318,19 +257,5 @@ formInscription.addEventListener("submit", (event) => {
 
 
 
-
-
-formConnexion.addEventListener("submit", (event) => {
-    event.preventDefault();
-    
-    const emailConnexionValid = checkEmailConnexion();
-    const passwordConnexionValid = checkPasswordConnexion();
-
-    if (emailConnexionValid && passwordConnexionValid) {
-        formConnexion.submit();
-    } 
-
- 
-});
 
 
