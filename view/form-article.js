@@ -1,16 +1,17 @@
 /*let buttonSubmit = document.querySelector('button[type="submit"]');*/ 
 
-let titreArticle = document.getElementById('titre-article');
+/*let titreArticle = document.getElementById('titre-article');
 let contenuArticle = document.getElementById('body-article')
-let form = document.querySelector('form');
+let formArticle = document.querySelector('form');
 let categorie = document.querySelectorAll('input[name="categorie-article"]');
+let imgArticle = document.getElementById('imageArticle');
 
 
 
 
 
 
-form.addEventListener("submit", (e) => {
+formArticle.addEventListener("submit", (e) => {
     e.preventDefault();
 
     let categorieCochee = [];
@@ -25,7 +26,7 @@ form.addEventListener("submit", (e) => {
         <p>Contenu de l'article : ${contenuArticle.value}</p>
         <p>Catégorie sélectionnée : ${categorieCochee}</p>
     `;
-});
+});*/
 
 
 

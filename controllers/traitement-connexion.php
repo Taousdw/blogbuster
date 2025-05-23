@@ -26,9 +26,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: ../view/form-connexion.php");
         exit;
     } 
+    $_SESSION['user'] = [
+        'id_utilisateur' => $user['id_utilisateur'],
+        'role' => $user['role_utilisateur'],  
+        'email' => $user['email_utilisateur'],
+        'nom' => $user['nom_utilisateur'] ?? '',      
+        'prenom' => $user['prenom_utilisateur'] ?? ''
+    ];
 
-// Si on arrive ici, c’est que l’authentification est réussie
-    $_SESSION['id_utilisateur'] = $user['id_utilisateur'];
+    
+    
     header("Location: ../index.php");
     exit;
 

@@ -1,6 +1,6 @@
 <?php
-require_once('bddConnect.php');
-require 'Controllers/ArticleManager.php';
+require_once __DIR__ . '/../bddConnect.php';
+require_once __DIR__ . '/../controllers/ArticleManager.php';
 
 
 

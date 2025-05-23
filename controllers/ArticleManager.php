@@ -12,7 +12,7 @@ class ArticleManager {
     
     public function getArticle($id_article) {
         
-        $query = $this->pdo->prepare("SELECT * FROM articles WHERE id_article = ?");
+        $query = $this->pdo->prepare("SELECT titre_article, contenu_article, image, date_article  FROM articles WHERE id_article = ?");
         $query->execute([$id_article]);
         return $query->fetch(PDO::FETCH_ASSOC); 
     }

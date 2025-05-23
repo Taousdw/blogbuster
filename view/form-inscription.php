@@ -17,7 +17,7 @@ session_start();
 </head>
 <body>
      <?php
-    require '../view/header.html';
+    require '../view/header.php';
     ?>
     <main>
     <div class="form-container" >
@@ -59,7 +59,7 @@ session_start();
         </form>
     </main>
     <?php
-    require '../view/footer.html';
+    require '../view/footer.php';
     ?>
     <script src="./form.js"></script>
 </body>

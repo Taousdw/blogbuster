@@ -1,7 +1,7 @@
 
 <?php
-session_start();
 
+session_start();
 
 ?>
 
@@ -16,11 +16,11 @@ session_start();
     <link rel="stylesheet" href="../assets/header.css">
     <link rel="stylesheet" href="../assets/form.css">
     <link rel="stylesheet" href="../assets/footer.css">
-     <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
     <?php
-    require '../view/header.html';
+    require '../view/header.php';
     ?>
 <main>
     <div class="form-container">
@@ -43,7 +43,6 @@ session_start();
 
             </div>
 
-            
                 <div id="redirection-inscription">
                     <p>Pas encore de compte ? 
                         <a href="form-inscription.php">Inscrivez-vous ici</a>
@@ -62,7 +61,7 @@ session_start();
         
     </div>
     <?php
-    require '../view/footer.html';
+    require '../view/footer.php';
     ?>
     <script src="./form-connexion.js"></script>
 </body>

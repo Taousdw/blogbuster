@@ -99,11 +99,12 @@ outline-color:#ffddc8;
 
 #redirection-inscription p {
 
-   color: #ffffff;
+   color: var(--text-color);
 }
 #redirection-inscription a {
 
     text-decoration: none;
+    cursor: pointer;
 }
 
 #redirection-inscription a:hover {
