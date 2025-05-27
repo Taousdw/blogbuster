@@ -14,7 +14,7 @@
         Vous avez des idées, des conseils ou des expériences à partager ? Rejoignez notre communauté de blogueurs invités et publiez vos articles sur BLOG-BUSTER. C’est l’occasion de faire connaître vos écrits et d’enrichir notre univers ensemble.
     </p>
     <div class="content-button">
-        <a href="./view/form-inscription.php">Publier mes articles</a>
+        <a href="<?= BASE_URL ?>view/form-inscription.php">Publier mes articles</a>
     </div>
 </footer>
     

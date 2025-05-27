@@ -10,6 +10,14 @@
 </head>
 <body>
     <?php
+    session_start();
+
+    if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'blogueur') {
+  
+        header('Location:/blogbuster/index.php');
+        exit();
+    }
+
     require '../view/header.php';
     ?>
     <header class="header-dashboard">
@@ -20,7 +28,7 @@
         <ul>
             <li><a href="./form-article.php">Ajouter un article </a></li>
             <li><a href="#">Mes articles </a></li>
-            <li><a href="deconnexion.php">Déconnexion</a></li>
+            <li><a href="../controllers/traitement_deconnexion.php">Déconnexion</a></li>
         </ul>
     </nav>
 

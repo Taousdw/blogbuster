@@ -9,6 +9,24 @@ class ArticleManager {
         $this->pdo = $pdo;
     }
 
+
+   public function lastArticleByCategorie(int $categorie) { 
+
+        $query = $this->pdo->prepare(
+            "SELECT articles.*, utilisateurs.nom_utilisateur, utilisateurs.prenom_utilisateur
+            FROM articles
+            INNER JOIN utilisateurs ON utilisateurs.id_utilisateur = articles.id_utilisateur
+            WHERE articles.id_categorie = :categorie
+            ORDER BY articles.date_article DESC, articles.id_article DESC
+            LIMIT 1"
+        );
+
+        $query->bindValue(':categorie', $categorie);
+        $query->execute();
+        return $query->fetch(PDO::FETCH_ASSOC);
+    }
+
+
     
     public function getArticle($id_article) {
         

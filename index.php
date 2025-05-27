@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
+
 <?php
 session_start();
 
@@ -19,70 +20,92 @@ require_once './model/Article.php';
 ?>
 
 <main class="travel-page">
-    <h1>Au coeur de nos voyages</h1> 
-    
-   <section class="article-recent">
+    <h1>Au cœur de nos voyages</h1> 
     
 
-    <?php
-    // Création de l'objet Article 
-    $article = new ArticleManager($pdo);
+    <section class="article-recent">
+        <?php
+        $articleManager = new ArticleManager($pdo);
 
-   
-    $articleRecent = $article->getArticle(10); 
+        // Article principal
+        $lastArticle = $articleManager->lastArticleByCategorie(2);
+        if ($lastArticle) : ?>
+            <article class="first">
+                <h2><?= $lastArticle['titre_article'] ?></h2>
+                <div class="lastImage">
+                    <img src="<?= $lastArticle['image'] ?>" alt="Image de <?= $lastArticle['titre_article'] ?>">
+                </div>
+                <p><?= $lastArticle['contenu_article'] ?></p>
+                <p><?= $lastArticle['date_article'] ?></p>
+                <p>Ecrit par <?=$lastArticle['nom_utilisateur']." ".$lastArticle['prenom_utilisateur']?></p>
+                
+            </article>
+        <?php endif; ?>
 
-    if ($articleRecent) : ?>
-        <article id="first">
-            <h3><?= $articleRecent['titre_article']  ?></h3>
-            <img src="<?=$articleRecent['image'] ?>" alt="Image de <?=$articleRecent['titre_article'] ?>">
-            <p><?= $articleRecent['contenu_article'] ?></p>
+        <?php
+        // Article secondaire
+        $articleRecent = $articleManager->getArticle(10);
+        if ($articleRecent) : ?>
+           
+            <article class="second">
+                <h2>Articles récents</h2>
+                <h4><?= $articleRecent['titre_article'] ?></h4>
+                <div class="lastImage">
+                    <img src="<?= $articleRecent['image'] ?>" alt="Image de <?= $articleRecent['titre_article'] ?>">
+                </div>
+                
+           
+        <?php endif; ?>
+        <?php
+         $articleRecent = $articleManager->getArticle(11);
+        if ($articleRecent) : ?>
+           
             
-        </article>
-    <?php else : ?>
-        <p>Aucun article récent disponible.</p>
-    <?php endif; ?>
+               
+                <h4><?= $articleRecent['titre_article'] ?></h4>
+                <div class="lastImage">
+                    <img src="<?= $articleRecent['image'] ?>" alt="Image de <?= $articleRecent['titre_article'] ?>">
+                </div>
+                
+           
+        <?php endif; ?>
+        <?php
 
-
-
- <?php
-    // Création de l'objet Article 
-    $article = new ArticleManager($pdo);
-
-   
-    $articleRecent = $article->getArticle(10); 
-
-    if ($articleRecent) : ?>
-        <article id="second">
-            <h3><?= $articleRecent['titre_article']  ?></h3>
-            <img src="<?=$articleRecent['image'] ?>" alt="Image de <?=$articleRecent['titre_article'] ?>">
-            <p><?= $articleRecent['contenu_article'] ?></p>
+         $articleRecent = $articleManager->getArticle(13);
+        if ($articleRecent) : ?>
+           
             
-        </article>
-    <?php else : ?>
-        <p>Aucun article récent disponible.</p>
-    <?php endif; ?>
+                
+                <h4><?= $articleRecent['titre_article'] ?></h4>
+                <div class="lastImage">
+                    <img src="<?= $articleRecent['image'] ?>" alt="Image de <?= $articleRecent['titre_article'] ?>">
+                </div>
+                
+            
+        <?php endif; ?>
+         <?php
 
-
-
-</section>
-
-    
-
-   
-   
-   
-    
-    
-   
+         $articleRecent = $articleManager->getArticle(12);
+        if ($articleRecent) : ?>
+           
+            
+                
+                <h4><?= $articleRecent['titre_article'] ?></h4>
+                <div class="lastImage">
+                    <img src="<?= $articleRecent['image'] ?>" alt="Image de <?= $articleRecent['titre_article'] ?>">
+                </div>
+                
+            </article>
+        <?php endif; ?>
+        
+    </section>
 </main>
 
-<?php
-require './view/footer.php';
-?>
-
-
+<?php require './view/footer.php'; ?>
+<script src="../header.js"></script>
 </body>
 </html>
+
 
 
 
